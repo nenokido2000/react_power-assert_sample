@@ -25,7 +25,6 @@ gulp.task('build', ['clean'], function () {
             console.log(err.message);
         })
         .pipe(source('bundle.js'))
-        .pipe(gulp.dest(DEST_DIRECTORY))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(gulp.dest(DEST_DIRECTORY));
@@ -38,7 +37,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('lint', function () {
-    return gulp.src(['**/*.js', '!gulpfile.js', '!dist/**', '!node_modules/**'])
+    return gulp.src(['**/*.js', '!gulpfile.js', '!dist/**', '!test/**', '!node_modules/**'])
         .pipe(eslint('.eslintrc'))
         .pipe(eslint.format())
         .pipe(eslint.format('checkstyle', fs.createWriteStream('checkstyle-result.xml')));
