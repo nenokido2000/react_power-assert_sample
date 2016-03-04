@@ -10,10 +10,10 @@ var espowerBabel = require('espower-babel/guess');
 var fs = require('fs');
 var eslint = require('gulp-eslint');
 
-var DEST_DIRECTORY = './dist';
+var DIST_DIRECTORY = './dist';
 
 gulp.task('clean', function (cb) {
-    del([DEST_DIRECTORY]);
+    del([DIST_DIRECTORY]);
     cb();
 });
 
@@ -27,7 +27,7 @@ gulp.task('build', ['clean'], function () {
         .pipe(source('bundle.js'))
         .pipe(buffer())
         .pipe(uglify())
-        .pipe(gulp.dest(DEST_DIRECTORY));
+        .pipe(gulp.dest(DIST_DIRECTORY));
 });
 
 gulp.task('watch', function () {
