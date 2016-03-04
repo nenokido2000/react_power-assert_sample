@@ -1,8 +1,8 @@
 import { jsdom } from 'jsdom';
 import assert from 'power-assert';
-import React from 'react'
+import React from 'react';
 import ReactDOM  from 'react-dom';
-import TestUtils from 'react-addons-test-utils'
+import TestUtils from 'react-addons-test-utils';
 import CommentBox from '../components/CommentBox';
 
 
